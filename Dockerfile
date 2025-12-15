@@ -34,18 +34,17 @@ FROM nginx:alpine
 # /usr/share/nginx/html is where Nginx serves files from by default
 COPY --from=build /app/dist /usr/share/nginx/html
 
-# Copy custom nginx configuration template
-# This template will be processed to use the PORT environment variable
-COPY <<EOF /etc/nginx/templates/default.conf.template
-server {
-    listen \${PORT};
-    location / {
-        root /usr/share/nginx/html;
-        index index.html;
-        try_files \$uri \$uri/ /index.html;
-    }
-}
-EOF
+# Create templates directory and custom nginx configuration template
+# This template will be processed by nginx to use the PORT env var
+RUN mkdir -p /etc/nginx/templates && \
+    echo 'server { \
+    listen ${PORT}; \
+    location / { \
+        root /usr/share/nginx/html; \
+        index index.html; \
+        try_files $uri $uri/ /index.html; \
+    } \
+}' > /etc/nginx/templates/default.conf.template
 
 # Set default PORT to 8080 for Cloud Run compatibility
 # Cloud Run will override this with its own PORT environment variable
