@@ -59,8 +59,8 @@ const Hero = () => {
                             <FaCode size={24} />
                         </div>
                         <div>
-                            <div className="text-3xl font-bold text-white">1835</div>
-                            <div className="text-gray-400 text-sm">LeetCode Rating</div>
+                            <div className="text-3xl font-bold text-white">1860</div>
+                            <div className="text-gray-400 text-sm">LeetCode Knight</div>
                         </div>
                     </motion.div>
                 </div>

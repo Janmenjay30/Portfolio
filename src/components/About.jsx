@@ -20,7 +20,7 @@ const About = () => {
                     >
                         <p className="text-gray-400 text-lg mb-6 leading-relaxed">
                             I am a <strong className="text-white">Final Year Computer Science Student</strong> with a passion for building scalable web applications and solving complex algorithmic problems.
-                            My journey involves a deep dive into <strong className="text-white">Data Structures and Algorithms</strong>, where I've achieved a rating of <strong className="text-white">1835 on LeetCode</strong>.
+                            My journey involves a deep dive into <strong className="text-white">Data Structures and Algorithms</strong>, where I've achieved <strong className="text-white">Knight rank with a rating of 1860 on LeetCode</strong>.
                         </p>
                         <p className="text-gray-400 text-lg mb-8 leading-relaxed">
                             As a <strong className="text-white">Full Stack Developer</strong>, I enjoy bridging the gap between engineering and design — combining my technical knowledge with my keen eye for design to create a beautiful product.
@@ -54,7 +54,7 @@ const About = () => {
                     >
                         {[
                             { number: '700+', label: 'LeetCode Problems' },
-                            { number: '1835', label: 'LeetCode Rating' },
+                            { number: '1860', label: 'LeetCode Rating (Knight)' },
                             { number: '91.8%', label: '12th Grade (Science)' }
                         ].map((stat, index) => (
                             <div key={index} className="bg-card p-8 rounded-2xl border border-white/5 text-center hover:border-accent/50 transition-colors group">
