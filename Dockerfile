@@ -34,21 +34,28 @@ FROM nginx:alpine
 # /usr/share/nginx/html is where Nginx serves files from by default
 COPY --from=build /app/dist /usr/share/nginx/html
 
-# Create a custom Nginx configuration to handle client-side routing
-# This ensures that all routes are handled by React Router (if used)
-RUN echo 'server { \
-    listen 80; \
-    location / { \
-        root /usr/share/nginx/html; \
-        index index.html; \
-        try_files $uri $uri/ /index.html; \
-    } \
-}' > /etc/nginx/conf.d/default.conf
+# Copy custom nginx configuration template
+# This template will be processed to use the PORT environment variable
+COPY <<EOF /etc/nginx/templates/default.conf.template
+server {
+    listen \${PORT};
+    location / {
+        root /usr/share/nginx/html;
+        index index.html;
+        try_files \$uri \$uri/ /index.html;
+    }
+}
+EOF
 
-# Expose port 80 to allow external access to the web server
-# This is documentation; you still need to map ports when running the container
-EXPOSE 80
+# Set default PORT to 8080 for Cloud Run compatibility
+# Cloud Run will override this with its own PORT environment variable
+ENV PORT=8080
+
+# Expose the PORT environment variable
+# This is documentation; Cloud Run will use the PORT env var
+EXPOSE 8080
 
 # Start Nginx in the foreground (daemon off prevents it from running in background)
-# This keeps the container running
+# The nginx image automatically processes templates in /etc/nginx/templates/
+# and substitutes environment variables before starting
 CMD ["nginx", "-g", "daemon off;"]
