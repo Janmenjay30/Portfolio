@@ -22,7 +22,12 @@ const Skills = () => {
         {
             category: 'Database & CS',
             icon: <FaWrench />,
-            items: ['MongoDB', 'MySQL', 'Docker', 'AWS', 'DSA', 'OOP', 'OS', 'DBMS']
+            items: ['MongoDB', 'MySQL', 'DSA', 'OOP', 'OS', 'DBMS']
+        },
+        {
+            category: 'Deployment',
+            icon: <FaServer />,
+            items: ['AWS (EC2)', 'Docker', 'Render', 'Vercel']
         }
     ];
 
