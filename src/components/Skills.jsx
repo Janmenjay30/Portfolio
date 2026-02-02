@@ -17,12 +17,12 @@ const Skills = () => {
         {
             category: 'Backend',
             icon: <FaServer />,
-            items: ['Node.js', 'Express.js', 'RESTful APIs', 'JWT/OAuth']
+            items: ['Node.js', 'Express.js', 'RESTful APIs', 'JWT/OAuth', 'RabbitMQ']
         },
         {
             category: 'Database & CS',
             icon: <FaWrench />,
-            items: ['MongoDB', 'MySQL', 'DSA', 'OOP', 'OS', 'DBMS']
+            items: ['MongoDB', 'MySQL', 'Docker', 'AWS', 'DSA', 'OOP', 'OS', 'DBMS']
         }
     ];
 
