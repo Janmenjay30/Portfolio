@@ -11,6 +11,18 @@ const Projects = () => {
             links: { code: 'https://github.com/Janmenjay30/IIITCONNECT', live: 'https://iiitconnect.vercel.app' }
         },
         {
+            title: 'Rank Your Resume',
+            desc: 'Ranks PDF resumes against a job description using embeddings and cosine similarity. Helps recruiters and job seekers optimize resume matching with AI-powered analysis.',
+            tech: ['Python', 'Embeddings', 'Cosine Similarity', 'PDF Processing'],
+            links: { code: 'https://github.com/Janmenjay30/Rank_your_resume', live: '#' }
+        },
+        {
+            title: 'Helper Buddy',
+            desc: 'A full-stack personal productivity application built with React, Tailwind CSS, Node.js, Express, and MongoDB. Schedule tasks, write notes, and set up email/SMS reminders!',
+            tech: ['React', 'Tailwind CSS', 'Node.js', 'MongoDB', 'Email/SMS API'],
+            links: { code: 'https://github.com/Janmenjay30/HelperBuddy', live: '#' }
+        },
+        {
             title: 'EduStream - Ed-Tech Platform',
             desc: 'Designed a secure learning platform with distinct student/instructor modules. Implemented RBAC, JWT auth, and secure payments achieving 99.9% transaction reliability.',
             tech: ['React', 'Node.js', 'Express', 'MongoDB'],

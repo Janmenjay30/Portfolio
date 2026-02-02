@@ -54,7 +54,7 @@ const About = () => {
                     >
                         {[
                             { number: '700+', label: 'LeetCode Problems' },
-                            { number: '1860', label: 'LeetCode Rating (Knight)' },
+                            { number: '1896', label: 'LeetCode Rating (Knight)' },
                             { number: '91.8%', label: '12th Grade (Science)' }
                         ].map((stat, index) => (
                             <div key={index} className="bg-card p-8 rounded-2xl border border-white/5 text-center hover:border-accent/50 transition-colors group">
